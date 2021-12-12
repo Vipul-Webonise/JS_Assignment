@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head> <title>Calculator Assignment</title> </head>
+    <body>
+        <h1 style="color: brown; text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Assignment 2</h1>
+        <form action="" name="addsub_Calculator" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300; font-size: larger; padding: 300px;">
+            <fieldset>
+                <legend>Add & Sub</legend>
+                    <span>Number 1: </span>
+                    <input type="text" name="num1">
+                    <span>Number 2: </span>
+                    <input type="text" name="num2">
+
+                    <button type = "button" onclick=calculate(0) style="background-color:wheat; color: black; font-size: medium;">Addition</button>
+                    <button type = "button" onclick=calculate(1) style="background-color:wheat; color: black; font-size: medium;"> Substraction </button>
+
+                <span> Result: </span> <input type="text" name="result">
+            </form>
+        </fieldset>
+
+        <script type=text/javascript>
+            calculate = (ope) => 
+            {
+                let num1, num2;
+                num1 = Number(document.addsub_Calculator.num1.value);
+                num2 = Number(document.addsub_Calculator.num2.value);
+
+                if(Number.isInteger(num1) && Number.isInteger(num2))
+                {
+                    switch(ope)
+                    {
+                        case 0:
+                            document.addsub_Calculator.result.value= num1 + num2;  break;
+                        
+                        case 1:
+                            document.addsub_Calculator.result.value= num1 - num2;  break;
+                    }
+                }
+                else
+                    alert("Please provide Integer ONLY");
+            }
+        </script>
+    </body>
+</html>

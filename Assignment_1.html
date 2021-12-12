@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignmen - 1</title>
+    </head>
+    <body style="text-align: center;">
+        <h1>Assignment - 1</h1>
+        <script>
+            range = prompt("Enter numbers");
+            filter_array = range.split(',');
+            filter_array.sort();
+
+            let findOccurence = {};
+            
+            filter_array.forEach(cur_ele => {
+            
+            (!findOccurence[cur_ele]) ? findOccurence[cur_ele] = 1 : findOccurence[cur_ele]++});
+            console.log(findOccurence);
+            
+            str = JSON.stringify(findOccurence, null, 4);
+            document.write(str);
+            alert(str);
+        </script>
+    </body>
+</html>
