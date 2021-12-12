@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Open & Close </title>
+    </head>
+
+    <body>
+        <h1 style="text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif; color: tomato;">Assignment 3</h1>
+        <div style="text-align: center; margin-top: 250px;">
+            <button type="button" onclick="operations(1)" style="background-color: wheat; height: 30px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: larger;"> Open Tabs </button>
+            <button type="button" onclick="operations(2)" style="background-color: wheat; height: 30px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: larger;"> Close Tabs </button>
+        </div>
+
+        <script>
+            let array = [];
+            operations = (choice) =>
+            {
+                switch(choice)
+                {
+                    case 1:
+                        for(let i=0; i<5; i++)
+                        {
+                            let win = window.open("https://www.google.com/docs/about/");
+                            array.push(win);
+                        }
+                        setTimeout(closeTab, 5000);
+                        break;
+                    
+                    case 2:
+                        closeTab();
+                        break;
+                }
+            }
+            function closeTab()
+            {
+                for(let i=0; i<5; i++)
+                {
+                    array[i].close();
+                }
+            }
+        </script>
+    </body>
+</html>
